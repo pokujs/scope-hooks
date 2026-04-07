@@ -1,0 +1,71 @@
+{
+  "name": "@pokujs/scope-hooks",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Generic per-test scope hook composition utilities for Poku plugins.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20.x.x",
+    "bun": ">=1.x.x",
+    "deno": ">=2.x.x",
+    "typescript": ">=6.x.x"
+  },
+  "scripts": {
+    "test": "node --import=tsx ./node_modules/poku/lib/bin/index.js tests --showLogs",
+    "test:bun": "bun ./node_modules/poku/lib/bin/index.js tests --showLogs",
+    "test:deno": "deno run -A npm:poku tests --showLogs",
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc -p tsconfig.dist.json",
+    "typecheck": "tsc -p tsconfig.build.json --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "npm run typecheck",
+    "check": "npm run typecheck && npm test",
+    "prepack": "npm run build"
+  },
+  "keywords": [
+    "poku",
+    "scope",
+    "hooks",
+    "plugins",
+    "testing"
+  ],
+  "author": "Lojhan",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pokujs/scope-hooks.git"
+  },
+  "homepage": "https://github.com/pokujs/scope-hooks#readme",
+  "bugs": {
+    "url": "https://github.com/pokujs/scope-hooks/issues"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "peerDependencies": {
+    "poku": ">=4.2.0"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
+    "@types/node": "^25.5.0",
+    "poku": "file:../poku",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  }
+}
