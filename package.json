@@ -1,6 +1,6 @@
 {
   "name": "@pokujs/scope-hooks",
-  "version": "1.0.0",
+  "version": "1.0.0-rc.1",
   "private": false,
   "description": "Generic per-test scope hook composition utilities for Poku plugins.",
   "type": "module",
