@@ -1,6 +1,6 @@
 import { AsyncLocalStorage } from 'node:async_hooks';
 import { assert, describe, it } from 'poku';
-import { composeScopeHooks } from '../../../../dist/index.js';
+import { composeScopeHooks } from '../../../../src/index.ts';
 
 const als = new AsyncLocalStorage<number>();
 const events: string[] = [];
