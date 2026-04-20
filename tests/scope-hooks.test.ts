@@ -1,6 +1,7 @@
 import { afterEach, assert, beforeEach, test } from 'poku';
-import { SCOPE_HOOKS_KEY } from 'poku/plugins';
 import { composeScopeHooks, getScopeHooks } from '../src/index.ts';
+
+const SCOPE_HOOKS_KEY = Symbol.for('@pokujs/poku.test-scope-hooks');
 
 const g = globalThis as Record<symbol, unknown>;
 let originalHooks: unknown;
