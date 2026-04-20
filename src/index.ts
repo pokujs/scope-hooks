@@ -1,4 +1,4 @@
-import { SCOPE_HOOKS_KEY } from 'poku/plugins';
+const SCOPE_HOOKS_KEY = Symbol.for('@pokujs/poku.test-scope-hooks');
 
 export type ScopeHookHolder = { scope: unknown };
 
